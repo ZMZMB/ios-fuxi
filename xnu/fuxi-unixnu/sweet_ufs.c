@@ -951,6 +951,8 @@ sweet_ufs_init(void)
 	fuxi_keys_init();
 	/* WCN7850 PCIe0/MHI probe, boot-arg fuxiwlan (bsd/dev/fuxi_wlan.c). */
 	fuxi_wlan_init();
+	/* DWC3 device mode + CDC-ECM netif, boot-arg sweetusb (bsd/dev/sweet_usb.c). */
+	sweet_usb_probe();
 #else
 	sweet_log_start();
 	sweet_sample_start();

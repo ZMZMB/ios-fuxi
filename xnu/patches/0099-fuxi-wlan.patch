@@ -18,12 +18,14 @@
  extern void sweet_usb_probe(void);
  
  #define REG_CAP         0x00
-@@ -858,6 +859,8 @@
- 	fuxi_touch_init();
+@@ -858,6 +859,10 @@
+	fuxi_touch_init();
  	/* Power / volume keys (bsd/dev/fuxi_keys.c, SPMI arbiter v7). */
  	fuxi_keys_init();
 +	/* WCN7850 PCIe0/MHI probe, boot-arg fuxiwlan (bsd/dev/fuxi_wlan.c). */
 +	fuxi_wlan_init();
++	/* DWC3 device mode + CDC-ECM netif, boot-arg sweetusb (bsd/dev/sweet_usb.c). */
++	sweet_usb_probe();
  #else
  	sweet_log_start();
  	sweet_sample_start();
